@@ -1,0 +1,251 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fef4eb;
+    padding: 2%;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-botton: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 23px;
+    color: black;
+}
+
+
+/* navbar */
+.navbar-default {
+    background-color: slategray;
+    border-color: lightgrey;
+}
+
+/* navbar titles */
+.navbar-default .navbar-brand {
+    color: black;
+    font-weight: 400;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #ffdbe9;
+}
+.navbar-default .navbar-brand:focus {
+    color: black;
+}
+
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #fdebea;
+    font-weight: 400;
+}
+
+p {
+    font-weight: 200;
+    font-size: 20px;
+    color: #5d6d7d;
+    text-align: justify;
+    text-justify: auto;
+}
+
+p b {
+    font-weight: 400;
+    color: #475661;
+}
+
+h1 .divider {
+    margin: 0 8px;
+}
+
+h1 .sub-headline {
+    color: #888;
+    font-weight: 300;
+}
+
+/* Divs for Navbar */
+#mechanism, #incidence, #protection, #recommendations{
+    padding-top: 30px;
+}
+
+/* Cover Image */
+#cover image {
+    width: 100%;
+}
+
+#cover text {
+    font-weight: 100;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100%;
+}
+
+/* Buttons */
+.btn-play {
+    background-color: #8ede7a;
+    color: black;
+    border-color: black;
+}
+
+.btn-play:hover {
+    background-color: #a1d39a;
+}
+
+.glyphicon {
+    color: black;
+}
+
+.btn-pause {
+    background-color: #dc6a73;
+    color: black;
+    border-color: black;
+}
+
+.btn-pause:hover {
+    background-color: #d57b7b;
+}
+
+/* Slider */
+.slider {
+    height: 10px;
+}
+
+.slider-container {
+    padding-top: 15px;
+    width: 60%;
+}
+
+.slider-year {
+    font-weight: 700;
+    color: black;
+}
+
+/* Map Vis */
+.states :hover {
+    fill: yellow;
+}
+
+#state-vac .title {
+    font-weight: 700;
+    color: black;
+}
+
+#map-vis {
+    border-right: dashed black 1px;
+}
+
+#map-vis .title {
+    font-weight: 700;
+    color: black;
+    font-size: 20px;
+}
+
+#vaccination-select {
+    margin-top: 20px;
+}
+
+/* stuff for herd immunity vis */
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.black {
+    color: black;
+}
+
+span {
+    font-weight: 400;
+    color: #475661;
+}
+
+#good-side, #bad-side {
+    padding-top: 10px;
+}
+
+#good-side-meta, #bad-side-meta {
+    text-align:center
+}
+
+#state-select-good {
+    margin-bottom: 13px;
+}
+#good-side, #good-side-meta {
+    background-color: #B5E7D1;
+}
+
+#bad-side, #bad-side-meta{
+    background-color: #FFC2C2;
+}
+
+.text-input {
+    text-align: center;
+    width: 50px;
+}
+
+.input-wrap {
+    margin-top: 10px;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+#good-side p{
+    font-weight: 200;
+    font-size: 18px;
+}
+
+#bad-side p{
+    font-weight: 200;
+    font-size: 18px;
+}
+
+.parameters-wrap {
+    padding-left: 50px;
+}
+
+.results-wrap {
+    padding-right: 10px;
+}
+
+.parameters-wrap, .results-wrap {
+    margin-top: -15px;
+}
+
+.area-chart-container {
+    margin-top: 30px;
+}
+
+#repopulate-button-good, #repopulate-button-bad {
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* Chart 1 Css */
+#chart1 .line {
+    fill: none;
+    stroke-width: 2px;
+    stroke: #185cb4;
+}
+
+#chart1 .area {
+    fill: #931a12;
+    stroke-width: 0;
+}

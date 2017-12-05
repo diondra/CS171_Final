@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>oOo: CS171 Final Project</title>
+
+  <!-- Load Google Font -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,100italic,400,300,400italic,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Vaccinations</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#mechanism">How Vaccines Work</a></li>
+          <li><a href="#incidence">Incidence</a></li>
+          <li><a href="#protection">Protection</a></li>
+          <!--<li><a href="#debunk-myths">Myths</a></li>-->
+          <li><a href="#recommendations">Recommendations</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div id="cover">
+    <!--<img src="img/superhero-kid-2.jpg" alt="Superhero Kid">
+    -->
+  </div>
+    <div class="col-md-12">
+        
+      <!-- Main Headline -->
+      <h2>"Vaccines are the best defense we have against serious, preventable, and sometimes deadly contagious diseases." - <i>US Department of Health & Human Services</i></h2>
+
+    </div>
+  <!--<h3>"Vaccinations will prevent more than <b>21 million</b> hospitalizations and <b>700,000</b> deaths among children born in the last 20 years." - <i>CDC</i> </h3>
+     -->
+  <p>In 1796, the world was changed forever when Edward Jenner successfully tested the first vaccine, a cure for smallpox.
+      Now, more than 2 centuries, we are still being protected by vaccinations.
+      Studies show that vaccinations will prevent more than <b>21 million</b> hospitalizations and <b>700,000</b> deaths among children born in the last 20 years.
+      But vaccines can't save everyone at once. They only work the immunization process.
+      Learn about what vaccines are protected you against.</p>
+
+  <div id="mechanism">
+      <h2>How Vaccines Prevent Against Disease</h2>
+      <div class="row">
+          <div class="col-md-6"><p> Vaccines aren't a miracle cure. The real hero is <b>you</b>!
+              A vaccine consists on an inactive form of the disease that it trying to protect against.
+              Your body's immune system is quite strong and can easily wipe out that form of the disease.
+              Further, your body is really smart! Much like a child studying from a book, your body learns about the disease from fighting it.
+              It remembers how it destroyed that disease so the next time it sees it (even if it's the dangerous active form of the disease), <b>it can protect you from any harm!</b>
+          </p></div>
+
+        <div class="col-md-6">
+          <img src="img/child-book.jpg" alt="Child Reading Book">
+        </div>
+      </div>
+
+      <h2>Vaccines In Action: Polio</h2>
+      <div class="row">
+        <div class="col-md-6"><p>With theory alone, you might be skeptical of the power of vaccination, but in practice, the proof is in the polio!
+            In the 1950s, when the polio epidemic was at its worst in the United States, approximately 50,000 people a year were struck with polio, paralyzing the lucky ones and killing the rest.
+            Nearly all of the affected were children, so the disease was also known as "infantile paralysis." Then, in 1955, Dr. Jonas Salk released the polio vaccine, which was then widely distributed.
+            By 1962, there were no more than a thousand polio cases nationwide. And now, <b>there hasn't been a single polio case since 1979</b>. And while that seems long ago, it is still recent history; around the world, there are still 10 to 20 million living polio survivors according to the WHO.
+            It's a long and hard fight, but thanks to vaccinations, polio is on its way to total eradication.</p>
+            </div>
+        <div class="col-md-6">
+          <img src="img/polio-vacs.jpg" alt="Polio Vaccination Success">
+        </div>
+      </div>
+  </div>
+
+  <div id="incidence">
+      <h2>Incidence of Vaccine-Preventable Diseases</h2>
+      <p>Vaccines don't just stop at smallpox and polio. There are host of diseases that are currently vaccine-preventable. Explore below to learn about them.</p>
+      <div class="container">
+          <form class="form-inline">
+              <div class="form-group">
+                  <label for="disease-type">Disease: </label>
+                  <select class="form-control" id="disease-type">
+                      <option value="MEASLES">Measles</option>
+                      <option value="MUMPS">Mumps</option>
+                      <option value="RUBELLA">Rubella</option>
+                      <option value="PERTUSSIS">Pertussis</option>
+                  </select>
+              </div>
+          </form>
+          <div class="row">
+              <div id="chart1" class="col-md-6"></div>
+          </div>
+      </div>
+      <h2>Vaccines and Policy</h2>
+      <div class="row">
+          <div class="col-md-6"> <p>Although vaccines can save lives, they aren't required across the country. Not everyone believes in the power of vaccination. Explore below to learn more about the vaccination levels across the United States.</p></div>
+          <div class="col-md-6"> <img src="img/school-halls.jpg" alt="Empty School Halls"></div>
+        </div>
+      </div>
+        <!-- slider -->
+  <h3>Vaccination Rate Per State Over Time</h3>
+
+  <div class="row">
+      <div class="col-xs-6">
+          <!--Button to play visualization -->
+          <button type="button" class="btn btn-play" onclick="playSlider()">
+              <span class="glyphicon glyphicon-play"></span> Play
+          </button>
+          <!--Button to pause visualization -->
+          <button type="button" class="btn btn-pause" onclick="stopSlider()">
+              <span class="glyphicon glyphicon-pause"></span> Pause
+          </button>
+          <!-- Select box to choose the disease data shown -->
+          <form class="form-inline">
+              <div class="form-group" id="vaccination-select">
+                  <label for="sortingType">Show data for</label>
+                  <select class="form-control" id="vaccination-type" onchange="changeVac()">
+                      <option value="vis.mmrData">Measles, Mumps, Rubella (MMR)</option>
+                      <option value="vis.dtapData">Diphtheria toxoid, Tetanus toxoid, acellular Pertussis (DTaP)</option>
+                      <option value="vis.hepaData">Hepatitis A</option>
+                      <option value="vis.hepbData">Hepatitis B</option>
+                      <option value="vis.polioData">Polio</option>
+                  </select>
+              </div>
+          </form>
+
+          <div class="slider-container">
+            <input id="map-slider" class="slider" type="range" name="range" min="1995" max="2016" value="1995" onchange="changeSlider()">
+          </div>
+          <output id="range" class="slider-year">1995</output>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-8">
+          <div id="map-vis"></div>
+      </div>
+      <div class="col-md-4">
+          <div id="state-vac"></div>
+          <div id="policy-recommendation"></div>
+      </div>
+  </div>
+
+
+  <div id="protection">
+      <h2>Every Vaccination Counts: Case Study - Measles in Disneyland</h2>
+      <p>It might be easy to think that the viruses to lead to deadly diseases no longer exist, but that is not the case. In just 2015, a case of measles broke out in California in Disneyland and that one case led to the infection of over 100 people in 10 states and across 3 countries over the period of 3 months.
+          The graph below shows the time and the amount of people infected during the duration of the outbreak.</p>
+  </div>
+
+  <div class="row area-chart-container">
+      <div class="col-md-8 col-md-offset-2">
+          <div id="line-chart">
+          </div>
+      </div>
+  </div>
+
+
+  <div class="row">
+      <h2>Herd Immunity</h2>
+      <p>Herd Immunity is the phenomenon where a community of individuals can be protected from an infectious disease when a large enough percentage of the population is immune (like by vaccination).
+      This is especially important because not everyone in a community is eligible to receive all vaccinations (i.e. newborns, those with specific medical conditions).
+      Herd immunity can also protect against widespread outbreaks, because the pathogen will be unable to spread if it is difficult to find infected individuals. Herd immunity helps us fight against disease outbreaks like the measles. Explore the phenomena below!
+
+      <br><br>
+      This visualization simulates the total percentage of the population that is susceptible to be infected during a measles outbreak given current MMR vaccination levels. The people in <span class="green">green</span> represent vaccinated individuals. Those in <span class="red">red</span> are unvaccinated individuals. This visualization has two parts. On the left is a simulation of herd immunity in action. Choose a state from the drop-down menu to use its immunization rate.
+      On the right is a simulation of an extreme case of <i>lack of</i> herd immunity. Here we use the current immunization rates from Ukraine to simulate what would happen if the measles were to break out there.
+
+      <br><br>
+      <b>To begin either exploration, "infect" the population by clicking a person below. Individuals that turn <span class="black">black</span> represent those infected from your simulated outbreak. Choose "Repopulate" at any time to pick new parameters to explore.</b> Note: This visualization makes no comment on the <i>speed</i> of the infection as every outbreak is unique, but note the <i>spread</i> of the infection. </p>
+  </div>
+
+  <!-- stuff for herd immunity vis -->
+  <div class="row">
+      <div class="col-md-6" id="good-side">
+          <div class="col-md-12">
+
+              <div class="row">
+                  <div class="col-md-12" id="good-side-meta">
+                      <select id="state-select-good"></select>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12">
+                      <div id="herd-vis-good"></div>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-6 parameters-wrap">
+                      <h4>Parameters</h4>
+                      <div class="input-wrap">
+                          Immunization rate:
+                          <input class="text-input" type="text" id="immunization-rate-good"><br>
+                      </div>
+                      <div class="input-wrap">
+                          Infection rate if vaccinated:
+                          <input class="text-input" type="text" id="rate-vaccinated-good"><br>
+                      </div>
+                      <div class="input-wrap">
+                          Infection rate if not vaccinated:
+                          <input class="text-input" type="text" id="rate-not-vaccinated-good"><br>
+                      </div>
+                      <button type="button" id="repopulate-button-good">Repopulate</button>
+                  </div>
+                  <div class="col-md-6 results-wrap">
+                      <h4>Results</h4>
+                      <!--<p>Total population: <span id="total-population"></span> = <span id="total-vaccinated"></span> vaccinated-->
+                      <!--+ <span id="total-unvaccinated"></span> unvaccinated.</p>-->
+                      <!--<p>Number infected: <span id="total-infected"></span> = <span id="infected-vaccinated"></span> vaccinated-->
+                      <!--+ <span id="infected-unvaccinated"></span> unvaccinated.</p>-->
+                      <p><span id="percent-infected-good"></span>% of population infected</p>
+                      <p><span id="percent-vaccinated-infected-good"></span>% of vaccinated population infected</p>
+                      <p><span id="percent-unvaccinated-infected-good"></span>% of unvaccinated population infected</p>
+                      <p><span id="percent-of-infected-vaccinated-good"></span>% of infected have been vaccinated</p>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <div class="col-md-6" id="bad-side">
+          <div class="col-md-12">
+
+              <div class="row">
+                  <div class="col-md-12" id="bad-side-meta">
+                      <a class="btn btn-primary active" role="button" aria-pressed="true" id="ukraine">Ukraine</a>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12">
+                      <div id="herd-vis-bad"></div>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-6 parameters-wrap">
+                      <h4>Parameters</h4>
+                      <div class="input-wrap">
+                          Immunization rate:
+                          <input class="text-input" type="text" id="immunization-rate-bad"><br>
+                      </div>
+                      <div class="input-wrap">
+                          Infection rate if vaccinated:
+                          <input class="text-input" type="text" id="rate-vaccinated-bad"><br>
+                      </div>
+                      <div class="input-wrap">
+                          Infection rate if not vaccinated:
+                          <input class="text-input" type="text" id="rate-not-vaccinated-bad"><br>
+                      </div>
+                      <button type="button" id="repopulate-button-bad">Repopulate</button>
+                  </div>
+                  <div class="col-md-6 results-wrap">
+                      <h4>Results</h4>
+                      <!--<p>Total population: <span id="total-population"></span> = <span id="total-vaccinated"></span> vaccinated-->
+                      <!--+ <span id="total-unvaccinated"></span> unvaccinated.</p>-->
+                      <!--<p>Number infected: <span id="total-infected"></span> = <span id="infected-vaccinated"></span> vaccinated-->
+                      <!--+ <span id="infected-unvaccinated"></span> unvaccinated.</p>-->
+                      <p><span id="percent-infected-bad"></span>% of population infected</p>
+                      <p><span id="percent-vaccinated-infected-bad"></span>% of vaccinated population infected</p>
+                      <p><span id="percent-unvaccinated-infected-bad"></span>% of unvaccinated population infected</p>
+                      <p><span id="percent-of-infected-vaccinated-bad"></span>% of infected have been vaccinated</p>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+
+  <!-- Visualization placeholders
+
+  <div id="debunk-myths">
+      <h2>Debunking Vaccination Myths: Autism</h2>
+      Simply, vaccination does not cause autism. The <i>one</i> scientist who reported the phenomena was reported for faking his data and has had his credentials revoked.
+      Some say there is a positive correlation between autism and vaccinations, but it is important to remember that correlation does not imply causation. Check out this vis of shark attacks and ice cream sales.
+        <img src="sketch/autism-vis-sketch.png" alt="Autism Vis Sketch">
+  </div>
+  This is an option visualization that we do not picture as being much more than two line charts showing the correlation does not imply causation by showing the "correlation" of two non-related events. This is an optional visualization that we may scrape given time constraints.
+  -->
+
+  <div id="recommendations">
+      <h2>Vaccinations Save Lives; Protect Yourself and Your Loved Ones</h2>
+      <div class="row">
+          <div class="col-md-6"><p>As you've seen, every vaccination counts and helps to protect the entire community! Please ensure that you are updating on all of your vaccines and that you encourage those with children to vaccinate them as well. Remember, vaccines don't have any power on their own. We need you to make it all work! Don't delay! <b>Stay Vaccinated!</b> </p></div>
+        <div class="col-md-6">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/QgpfNScEd3M?rel=0&amp;showinfo=0&amp;start=177" frameborder="0" allowfullscreen></iframe>
+            <p><b> *viewer discretion advised</b></p>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- Load JS libraries -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/queue.min.js"></script>
+  <script src="js/d3.min.js"></script>
+  <script src="js/topojson.js"></script>
+  <script src="js/bootstrap-slider.js"></script>
+
+  <!-- Visualization objects -->
+
+  <!-- Load data, create visualizations -->
+  <!--<script src="js/npm.js"></script> -->
+  <script src="js/LineChart.js"></script>
+  <script src="js/HerdImmunity.js"></script>
+  <script src="js/mapVis.js"></script>
+  <script src="js/stateVacVis.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
