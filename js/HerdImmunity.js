@@ -15,6 +15,7 @@ HerdImmunity = function(_parentElement, _stateInfo) {
     this.stateInfo = _stateInfo;
     this.curDisease = "Measles";
     this.curState = "Alabama";
+    this.curCountry = "Ukraine";
     this.infectionRateVaccinated = 3;
     this.infectionRateNotVaccinated = 90;
     this.diseaseVaccinationsDict = {
@@ -23,6 +24,12 @@ HerdImmunity = function(_parentElement, _stateInfo) {
         "Polio": "Polio",
         "Pertusis": "DTaP3",
         "rubella": "MMR"
+    };
+    this.badCountries = {
+        "Ukraine": "42.4",
+        "Somalia": "44.6",
+        "South Sudan": "51.9",
+        "Congo": "67"
     };
     this.extension = null;
     if(this.parentElement.indexOf('good') !== -1) {
@@ -78,13 +85,22 @@ HerdImmunity.prototype.initVis = function() {
             vis.curState = $(this).val();
             vis.updateVis(true);
         });
-    }
-    else {
-        $('#ukraine').on('click', function() {
-            $('#ukraine').addClass('active');
+    } else {
+        for(var country in vis.badCountries) {
+            var newSelect = '<option value="' + country + '">' + country + '</option>';
+            $('#country-select' + vis.extension).append(newSelect);
+        }
+        $('#country-select' + vis.extension).on("change", function() {
+            vis.curCountry = $(this).val();
             vis.updateVis(true);
         });
     }
+    // else {
+    //     $('#ukraine').on('click', function() {
+    //         $('#ukraine').addClass('active');
+    //         vis.updateVis(true);
+    //     });
+    // }
 
     // $(".disease-button").on("click", function() {
     //     // deactivate active class on last clicked button
@@ -99,7 +115,7 @@ HerdImmunity.prototype.initVis = function() {
     vis.margin = {top: 0, right: 30, bottom: 15, left: 0};
 
     vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
-    vis.height = 460 - vis.margin.top - vis.margin.bottom;
+    vis.height = 420 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -183,6 +199,8 @@ HerdImmunity.prototype.initPopulation = function() {
 
     function bindRun(pos) {
         vis.population[pos[0]][pos[1]].on("click", function() {
+            var curCliked = +$('#people-clicked' + vis.extension).text();
+            $('#people-clicked' + vis.extension).text((curCliked + 1).toString());
             vis.startSimulation([pos[0], pos[1]]);
         });
     }
@@ -300,7 +318,8 @@ HerdImmunity.prototype.updateVis = function(select) {
             $('#rate-not-vaccinated' + vis.extension).val(vis.infectionRateNotVaccinated);
         }
         else {
-            $('#immunization-rate' + vis.extension).val("42.4");
+            var countryVaccination = vis.badCountries[vis.curCountry];
+            $('#immunization-rate' + vis.extension).val(countryVaccination.toString());
             $('#rate-vaccinated' + vis.extension).val(vis.infectionRateVaccinated);
             $('#rate-not-vaccinated' + vis.extension).val(vis.infectionRateNotVaccinated);
         }
@@ -310,6 +329,8 @@ HerdImmunity.prototype.updateVis = function(select) {
             $('#ukraine').removeClass('active');
         }
     }
+
+    $('#people-clicked' + vis.extension).text("0");
 
     vis.initPopulation();
 };

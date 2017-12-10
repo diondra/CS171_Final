@@ -181,12 +181,14 @@ span {
     padding-top: 10px;
 }
 
-#good-side-meta, #bad-side-meta {
+#bad-side-meta {
     text-align:center
 }
 
-#state-select-good {
-    margin-bottom: 13px;
+
+
+#state-select-good, #country-select-bad{
+    margin-bottom: 12px;
 }
 #good-side, #good-side-meta {
     background-color: #B5E7D1;
@@ -204,17 +206,17 @@ span {
 .input-wrap {
     margin-top: 10px;
     font-weight: 200;
-    font-size: 15px;
+    /*font-size: 15px;*/
 }
 
 #good-side p{
     font-weight: 200;
-    font-size: 18px;
+    /*font-size: 18px;*/
 }
 
 #bad-side p{
     font-weight: 200;
-    font-size: 18px;
+    /*font-size: 18px;*/
 }
 
 .parameters-wrap {
@@ -223,10 +225,22 @@ span {
 
 .results-wrap {
     padding-right: 10px;
+    /*margin-left: -10px;*/
+}
+
+.parameters-wrap {
+    margin-left: -25px;
 }
 
 .parameters-wrap, .results-wrap {
-    margin-top: -15px;
+    color: black;
+    font-size: 16px !important;
+    margin-bottom: 20px;
+}
+
+.results-wrap p {
+    color: black;
+    font-size: 16px !important;
 }
 
 .area-chart-container {
@@ -248,4 +262,30 @@ span {
 #chart1 .area {
     fill: #931a12;
     stroke-width: 0;
+}
+
+#herd-legend {
+    position: absolute;
+}
+
+#herd-legend p {
+    font-size: 14px;
+    color: black;
+    font-weight: 300;
+}
+
+#herd-legend img {
+    display: inline;
+    max-height: 20px;
+    max-width: 30px;
+}
+
+#first-legend {
+    margin-bottom: 3px;
+}
+
+.number-clicked {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    margin-left: 30%;
 }
