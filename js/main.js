@@ -11,7 +11,7 @@ svg.append("svg:image")
     .attr("class", "try")
     .attr("xlink:href", "img/red-triangles.jpg");
 
-svg.append("text")
+mainText = svg.append("text")
     .attr("class", "title-text")
     .text("The Truth about Vaccinations")
     .attr("x", width/2)
@@ -19,8 +19,18 @@ svg.append("text")
     .attr("y", height/2)
     .attr("fill", "black");
 
-// change all fullscreen divs
-$(".fullscreen").css("height", height);
+// on resize change width/height
+
+$( window ).resize(function() {
+    width = $("#cover").width();
+    height = $( window ).height();
+    svg
+        .attr("width", width)
+        .attr("height", height);
+    mainText
+        .attr("x", width/2)
+        .attr("y", height/2);
+});
 
 
 // Variables for the visualization instance
@@ -331,8 +341,8 @@ function createChart1(error, measles, mumps, pertussis, rubella, vaccination) {
         return d.week > parseTime("196201");
     });
 
-    console.log(pertussisVaccination);
-    console.log(pertussisData);
+    //console.log(pertussisVaccination);
+    //console.log(pertussisData);
 
     var margin = {top: 30, right: 50, bottom: 70, left: 70};
 

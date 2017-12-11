@@ -196,7 +196,6 @@ MapVis.prototype.yearAdvance = function(restart) {
         vis.curYear = vis.startingYear;
     }
     else {
-        console.log("false")
         vis.curYear;
     }
     // Update the visualization
