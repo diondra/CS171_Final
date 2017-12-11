@@ -55,6 +55,13 @@ var mumpsVaccination = [];
 var measlesVaccination = [];
 var rubellaVaccination = [];
 
+var info = {
+    "MEASLES" : "<b>Measles</b></br></br>Measles is a highly contagious, serious disease caused by a virus. Before the introduction of measles vaccine in 1963 and widespread vaccination, major epidemics occurred approximately every 2–3 years and measles caused an estimated 2.6 million deaths each year. The disease remains one of the leading causes of death among young children globally, despite the availability of a safe and effective vaccine. Measles is caused by a virus in the paramyxovirus family and it is normally passed through direct contact and through the air. The virus infects the respiratory tract , then spreads throughout the body.</br></br> Source: https://www.cdc.gov/measles/about/index.html",
+    "MUMPS" : "<b>Mumps</b></br></br>Mumps is a contagious disease that is caused by a virus. Mumps typically starts with fever, headache, muscle aches, tiredness, and loss of appetite. Then, most people will have swelling of their salivary glands. This is what causes the puffy cheeks and a tender, swollen jaw. Mumps likely spreads before the salivary glands begin to swell and up to five days after the swelling begins. Before the U.S. mumps vaccination program started in 1967, mumps was a universal disease of childhood. Since the pre-vaccine era, there has been a more than 99% decrease in mumps cases in the United States. </br></br> Source: https://www.cdc.gov/mumps/about/index.html",
+    "RUBELLA" : "<b>Rubella</b></br></br>Rubella is a contagious disease caused by a virus. It is also called German measles, but it is caused by a different virus than measles. Most people who get rubella usually have mild illness, with symptoms that can include a low-grade fever, sore throat, and a rash that starts on the face and spreads to the rest of the body. Some people may also have a headache, pink eye, and general discomfort before the rash appears. Rubella can cause a miscarriage or serious birth defects in an unborn baby if a woman is infected while she is pregnant. </br></br> Source: https://www.cdc.gov/mumps/about/index.html",
+    "PERTUSSIS" : "<b>Pertussis</b></br></br>Pertussis, a respiratory illness commonly known as whooping cough, is a very contagious disease caused by a type of bacteria called Bordetella pertussis. These bacteria attach to the cilia (tiny, hair-like extensions) that line part of the upper respiratory system. The bacteria release toxins (poisons), which damage the cilia and cause airways to swell. People with pertussis usually spread the disease to another person by coughing or sneezing or when spending a lot of time near one another where you share breathing space. Infected people are most contagious up to about 2 weeks after the cough begins.  </br></br> Source: https://www.cdc.gov/pertussis/about/index.html"
+};
+
 
 var parseTime = d3.timeParse("%Y%U");
 
@@ -207,8 +214,6 @@ function createChart1(error, measles, mumps, pertussis, rubella, vaccination) {
         return d.percentage !== 0 && d.year >= 1966 &&  d.year <= 2002;
     });
 
-    console.log();
-
     measles.forEach(function(d) {
         d.cases = +d.cases;
         d.incidence_per_capita = +d.incidence_per_capita;
@@ -322,9 +327,12 @@ function createChart1(error, measles, mumps, pertussis, rubella, vaccination) {
         return d.week > parseTime("196201");
     });
 
+    console.log(pertussisVaccination);
+    console.log(pertussisData);
+
     var margin = {top: 30, right: 50, bottom: 70, left: 70};
 
-    var width = 1000 - margin.left - margin.right,
+    var width = 800 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     var svg = d3.select("#chart1").append("svg")
@@ -420,6 +428,29 @@ function createChart1(error, measles, mumps, pertussis, rubella, vaccination) {
             return d + "%";
         });
 
+    var tool_tip = d3.tip()
+        .attr("class", "d3-tip")
+        .offset([-8, 0])
+        .html(function(d) { return d.percentage + "%"; });
+
+    svg.append("g")
+        .attr("class", "tooltips")
+        .call(tool_tip);
+
+    var circles = svg.selectAll("circle")
+        .data(measlesVaccination);
+
+    circles.enter().append("circle")
+        .merge(circles)
+        .attr("cx", function(d) { return dateScale(parseYear(d.year)); })
+        .attr("cy", function(d) { return percentageScale(d.percentage); })
+        .attr("class", "tooltip-circle")
+        .attr("r", "4")
+        .on('mouseover', tool_tip.show)
+        .on('mouseout', tool_tip.hide);
+
+    circles.exit().remove();
+
     svg.append("g")
         .attr("class", "axis y-axis vaccination-axis")
         .attr("transform", "translate(" + width + ",0)")
@@ -429,13 +460,15 @@ function createChart1(error, measles, mumps, pertussis, rubella, vaccination) {
         .text("Cases")
         .attr("class", "label")
         .attr("x", -29)
-        .attr("y", -10);
+        .attr("y", -10)
+        .style("fill", "#931a12");
 
     svg.append("text")
         .text("Vaccination Rate")
         .attr("class", "label")
         .attr("x", width - 58)
-        .attr("y", -10);
+        .attr("y", -10)
+        .style("fill", "#185cb4");
 
     function initVis(data, vaccination) {
 
@@ -519,18 +552,51 @@ function createChart1(error, measles, mumps, pertussis, rubella, vaccination) {
             .transition()
             .duration(800)
             .attr("d", line);
+
+        var tool_tip = d3.tip()
+            .attr("class", "d3-tip")
+            .offset([-8, 0])
+            .html(function(d) { return d.percentage + "%"; });
+
+        svg.select(".tooltips")
+            .call(tool_tip);
+
+        var circles = svg.selectAll("circle")
+            .data(vaccination);
+
+        circles.enter().append("circle")
+            .merge(circles)
+            .on('mouseover', tool_tip.show)
+            .on('mouseout', tool_tip.hide)
+            .transition()
+            .duration(800)
+            .attr("cx", function(d) { return dateScale(parseYear(d.year)); })
+            .attr("cy", function(d) { return percentageScale(d.percentage); })
+            .attr("class", "tooltip-circle")
+            .attr("r", "4");
+
+        circles.exit().remove();
+
+    }
+
+    function updateInfo(dis) {
+        document.getElementById("disease-info").innerHTML = info[dis];
     }
 
     d3.select("#disease-type").on("change", function() {
         var disease = d3.select("#disease-type").property("value");
         if (disease == "MEASLES") {
             initVis(measlesData, measlesVaccination);
+            updateInfo(disease);
         } else if (disease == "MUMPS") {
             initVis(mumpsData, mumpsVaccination);
+            updateInfo(disease);
         } else if (disease == "RUBELLA") {
             initVis(rubellaData, rubellaVaccination);
+            updateInfo(disease);
         } else {
             initVis(pertussisData, pertussisVaccination);
+            updateInfo(disease);
         }
 
     });
