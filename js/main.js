@@ -332,8 +332,8 @@ function createChart1(error, measles, mumps, pertussis, rubella, vaccination) {
 
     var margin = {top: 30, right: 50, bottom: 70, left: 70};
 
-    var width = 800 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+    var width = width = $("#chart1").width() - margin.left - margin.right;
+    var height = 500 - margin.top - margin.bottom;
 
     var svg = d3.select("#chart1").append("svg")
         .attr("width", width + margin.left + margin.right)
