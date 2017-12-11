@@ -11,13 +11,12 @@
  *  @param _handler            -- Event handler
  */
 
-MapVis = function(_parentElement, _mapData, _mmrData, _dtapData, _hepaData, _hepbData, _polioData, _handler) {
+MapVis = function(_parentElement, _mapData, _mmrData, _dtapData, _hepbData, _polioData, _handler) {
 
 	this.parentElement = _parentElement;
 	this.mapData = _mapData;
 	this.mmrData = _mmrData;
 	this.dtapData = _dtapData;
-	this.hepaData = _hepaData;
 	this.hepbData = _hepbData;
 	this.polioData = _polioData;
 	this.handler = _handler;
@@ -143,7 +142,6 @@ MapVis.prototype.initVis = function() {
         .attr("fill", function(d) {
             var state = d.properties.name;
             var rate = vis.vacData[state][vis.curYear];
-            console.log(rate);
             return vis.fillScale(rate);
         });
 
@@ -193,8 +191,13 @@ MapVis.prototype.updateVis = function() {
 
 MapVis.prototype.yearAdvance = function(restart) {
     var vis = this;
-    if(restart) {
+    if(restart == true) {
+        console.log("true");
         vis.curYear = vis.startingYear;
+    }
+    else {
+        console.log("false")
+        vis.curYear;
     }
     // Update the visualization
     vis.interval = setInterval(function() {
@@ -214,7 +217,7 @@ MapVis.prototype.changeSlider = function() {
     var vis = this;
 
     // stop changing map
-    // clearInterval(vis.visYears);
+    clearInterval(vis.interval);
 
     // change slider value
     range.value = d3.select("#map-slider").property("value");
@@ -242,16 +245,18 @@ MapVis.prototype.changeVac = function() {
     var vis = this;
 
     var vacData = d3.select("#vaccination-type").property("value");
-    var vacDatasStrings = ["vis.mmrData", "vis.hepaData", "vis.hepbData", "vis.dtapData", "vis.polioData"];
-    var vacDatas = [vis.mmrData, vis.hepaData, vis.hepbData, vis.dtapData, vis.polioData];
-    var titleTexts = ["Measles, Mumps, and Rubella (MMR)", "Hepatitis A", "Hepatitis B", "Diphtheria toxoid, Tetanus toxoid, acellular Pertussis (DTaP)", "Polio"];
+    var vacDatasStrings = ["vis.mmrData", "vis.hepbData", "vis.dtapData", "vis.polioData"];
+    var vacDatas = [vis.mmrData, vis.hepbData, vis.dtapData, vis.polioData];
+    var titleTexts = ["Measles, Mumps, and Rubella (MMR)", "Hepatitis B", "Diphtheria toxoid, Tetanus toxoid, acellular Pertussis (DTaP)", "Polio"];
     var index = vacDatasStrings.indexOf(vacData);
 
     vis.titleText = titleTexts[index];
     vis.vacData = vacDatas[index];
 
     vis.stopSlider();
+
     vis.yearAdvance(true);
+
 }
 
 

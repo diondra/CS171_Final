@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfa030ca-e523-4260-92f5-01857ef39889" name="Default" comment="" />
+    <list default="true" id="bfa030ca-e523-4260-92f5-01857ef39889" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/mapVis.js" afterPath="$PROJECT_DIR$/js/mapVis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/stateVacVis.js" afterPath="$PROJECT_DIR$/js/stateVacVis.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,6 +27,8 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-956">
               <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+            <state relative-caret-position="2085">
+              <caret line="139" column="65" lean-forward="false" selection-start-line="139" selection-start-column="61" selection-end-line="139" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -29,6 +39,8 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
               <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="202">
+              <caret line="207" column="46" lean-forward="true" selection-start-line="207" selection-start-column="46" selection-end-line="207" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -39,6 +51,8 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="311">
               <caret line="230" column="18" lean-forward="false" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="18" />
+            <state relative-caret-position="3555">
+              <caret line="237" column="42" lean-forward="true" selection-start-line="237" selection-start-column="42" selection-end-line="237" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -49,6 +63,8 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1043">
               <caret line="202" column="21" lean-forward="false" selection-start-line="202" selection-start-column="15" selection-end-line="202" selection-end-column="21" />
+            <state relative-caret-position="222">
+              <caret line="165" column="23" lean-forward="false" selection-start-line="165" selection-start-column="23" selection-end-line="165" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -69,6 +85,8 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            <state relative-caret-position="-2693">
+              <caret line="88" column="21" lean-forward="true" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -113,14 +131,31 @@
       <find>clearInterval</find>
       <find>vis.interval</find>
       <find>setInterval</find>
+      <find>Year</find>
+      <find>curYear</find>
+      <find>wrapper</find>
+      <find>Vaccinations</find>
+      <find>Every</find>
+      <find>LIFE</find>
+      <find>hepa</find>
+      <find>cover</find>
+      <find>Hep</find>
+      <find>year</find>
+      <find>play</find>
+      <find>Play</find>
       <find>yearAdvance</find>
       <find>chart1</find>
+      <find>wrangle</find>
     </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -131,6 +166,10 @@
         <option value="$PROJECT_DIR$/js/HerdImmunity.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/stateVacVis.js" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/stateVacVis.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/mapVis.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
@@ -144,7 +183,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="178" />
+    <option name="x" value="156" />
     <option name="y" value="23" />
     <option name="width" value="1089" />
     <option name="height" value="940" />
@@ -177,6 +216,11 @@
               <item name="CS171_Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS171_Final" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final Project New" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final Project New" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -241,17 +285,23 @@
       <workItem from="1513019340712" duration="741000" />
       <workItem from="1513026400275" duration="701000" />
       <workItem from="1513027230781" duration="514000" />
+      <workItem from="1512448365115" duration="1828000" />
+      <workItem from="1513001756903" duration="8000" />
+      <workItem from="1513001907082" duration="7603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="81070000" />
+    <option name="totallyTimeSpent" value="88553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="178" y="23" width="1089" height="940" extended-state="0" />
     <editor active="true" />
+    <frame x="156" y="23" width="1101" height="773" extended-state="0" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20661157" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20435968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -282,14 +332,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/mapVis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3525">
-          <caret line="235" column="0" lean-forward="true" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2925">
@@ -623,18 +665,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/needle-dark.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
     <entry file="file://$PROJECT_DIR$/js/npm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        <state relative-caret-position="-2693">
+          <caret line="88" column="21" lean-forward="true" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/mapVis.js">
+    <entry file="file://$PROJECT_DIR$/js/npm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
           <caret line="230" column="18" lean-forward="false" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="18" />
+        <state relative-caret-position="15">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -643,12 +696,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="202">
+          <caret line="207" column="46" lean-forward="true" selection-start-line="207" selection-start-column="46" selection-end-line="207" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="165" column="23" lean-forward="false" selection-start-line="165" selection-start-column="23" selection-end-line="165" selection-end-column="23" />
         <state relative-caret-position="-1043">
           <caret line="202" column="21" lean-forward="false" selection-start-line="202" selection-start-column="15" selection-end-line="202" selection-end-column="21" />
           <folding />
@@ -656,9 +713,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/js/mapVis.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        <state relative-caret-position="3555">
+          <caret line="237" column="42" lean-forward="true" selection-start-line="237" selection-start-column="42" selection-end-line="237" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -667,6 +727,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-956">
           <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        <state relative-caret-position="2085">
+          <caret line="139" column="65" lean-forward="false" selection-start-line="139" selection-start-column="61" selection-end-line="139" selection-end-column="65" />
           <folding />
         </state>
       </provider>

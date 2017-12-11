@@ -5,11 +5,10 @@
  * @param _data						-- the actual data
  */
 
-StateVac = function(_parentElement, _mmrData, _dtapData, _hepaData, _hepbData, _polioData, _policyData){
+StateVac = function(_parentElement, _mmrData, _dtapData, _hepbData, _polioData, _policyData){
     this.parentElement = _parentElement;
     this.mmrData = _mmrData;
     this.dtapData = _dtapData;
-    this.hepaData = _hepaData;
     this.hepbData = _hepbData;
     this.polioData = _polioData;
     this.policyData = _policyData;
@@ -216,18 +215,15 @@ StateVac.prototype.onSelectionChange = function(state, year, title){
     vis.currentState = state;
     vis.year = +year;
 
-    var titleTexts = ["Measles, Mumps, and Rubella (MMR)", "Hepatitis A", "Hepatitis B", "Diphtheria toxoid, Tetanus toxoid, acellular Pertussis (DTaP)", "Polio"];
-    var vacDatas = [vis.mmrData, vis.hepaData, vis.hepbData, vis.dtapData, vis.polioData];
+    var titleTexts = ["Measles, Mumps, and Rubella (MMR)", "Hepatitis B", "Diphtheria toxoid, Tetanus toxoid, acellular Pertussis (DTaP)", "Polio"];
+    var vacDatas = [vis.mmrData, vis.hepbData, vis.dtapData, vis.polioData];
     var index = titleTexts.indexOf(title);
 
     vis.data = vacDatas[index];
 
-    if (index == 1) {
-        vis.years = vis.yearsHepA;
-    }
-    else {
-        vis.years = vis.yearsnotHepA;
-    }
+
+    vis.years = vis.yearsnotHepA;
+
 
     vis.wrangleData();
 };

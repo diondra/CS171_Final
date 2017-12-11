@@ -1,5 +1,5 @@
 width = $("#cover").width();
-height = 500;
+height = $( window ).height();
 
 var svg = d3.select("#cover").append("svg")
     .attr("width", width)
@@ -9,14 +9,18 @@ svg.append("svg:image")
     .attr("x", 0)
     .attr("y", 0)
     .attr("class", "try")
-    .attr("xlink:href", "img/superhero-kid.jpg");
+    .attr("xlink:href", "img/red-triangles.jpg");
 
 svg.append("text")
-    .text("The Power of Vaccination")
+    .attr("class", "title-text")
+    .text("The Truth about Vaccinations")
     .attr("x", width/2)
     .attr("text-anchor", "middle")
-    .attr("y", height/3 - 40)
+    .attr("y", height/2)
     .attr("fill", "black");
+
+// change all fullscreen divs
+$(".fullscreen").css("height", height);
 
 
 // Variables for the visualization instance
@@ -152,8 +156,8 @@ function createVis() {
         stateVac.onSelectionChange(state, year, title);
     });
 
-    mapVis = new MapVis("map-vis", usaJson, mmrData, dtapData, hepaData, hepbData, polioData, mapEventHandler);
-    stateVac = new StateVac("state-vac", mmrData, dtapData, hepaData, hepbData, polioData, mmrPolicy);
+    mapVis = new MapVis("map-vis", usaJson, mmrData, dtapData, hepbData, polioData, mapEventHandler);
+    stateVac = new StateVac("state-vac", mmrData, dtapData, hepbData, polioData, mmrPolicy);
 }
 
 // Map Vis Interactivity
