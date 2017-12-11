@@ -1,7 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: whitesmoke;
-    padding: 2%;
 }
 
 h1 {
@@ -16,7 +15,7 @@ h2 {
     font-weight: 300;
     font-size: 25px;
     margin-top: 50px;
-    margin-botton: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -207,6 +206,10 @@ img {
 
 #map-vis {
     border-right: dashed black 1px;
+}
+
+.padleft {
+    padding-left: 2%;
 }
 
 #map-vis .title {
