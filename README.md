@@ -1,4 +1,5 @@
 CS171 final project - The importance of vaccinations 
+
 submitted by Diondra Dilworth, Goksenin Akdeniz and Dor Baruch. 
 
 Our js code includes HerdImmunity.js, LineChart.js, main.js, mapVis.js and stateVacVis.js
