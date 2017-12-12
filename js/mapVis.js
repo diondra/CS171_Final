@@ -61,7 +61,7 @@ MapVis.prototype.initVis = function() {
 
     // initialize map projection/path
     vis.projection = d3.geoAlbersUsa()
-        .scale(4 * vis.width / 3)
+        .scale(vis.width)
         .translate([vis.width / 2, vis.height / 2]);
 
     vis.path = d3.geoPath()
