@@ -1,4 +1,4 @@
-width = $("#cover").width();
+width = $( window ).width();
 height = $( window ).height();
 
 var svg = d3.select("#cover").append("svg")
@@ -22,11 +22,11 @@ mainText = svg.append("text")
 // on resize change width/height
 
 $( window ).resize(function() {
-    width = $("#cover").width();
+    width = $( window ).width();
     height = $( window ).height();
     svg
-        .attr("width", width)
-        .attr("height", height);
+       .attr("width", width)
+       .attr("height", height);
     mainText
         .attr("x", width/2)
         .attr("y", height/2);
